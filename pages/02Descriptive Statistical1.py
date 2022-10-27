@@ -17,9 +17,9 @@ df1=df.loc[df['name'] == option]
 
 fig, axes = plt.subplots(nrows=2, ncols=2)
 ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");axes[0,0].set_title('Opening Price')
-ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");axes[0,1].set_title('Opening Price')
-ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");axes[1,0].set_title('Opening Price')
-ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");axes[1,1].set_title('Opening Price')
+ax1 = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");axes[0,1].set_title('Opening Price')
+ax2 = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");axes[1,0].set_title('Opening Price')
+ax3 = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");axes[1,1].set_title('Opening Price')
 st.pyplot(plt)
 
 
