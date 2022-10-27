@@ -8,16 +8,9 @@ df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-#df1 = df1.rename(columns={'date':'index'}).set_index('index')
-chart1 = alt.Chart(df1).mark_line().encode(
-    x=alt.X('date',axis=alt.Axis(format='%Y-%m',labelAngle=-20)),
-    y=alt.Y('close',scale=alt.Scale(domain=[np.min(df1.close), np.max(df1.close)])), 
-).properties(width=500, height=300)
-chart2 = alt.Chart(df1).mark_line().encode(
-    x=alt.X('date',axis=alt.Axis(format='%Y-%m',labelAngle=-20)),
-    y=alt.Y('open',scale=alt.Scale(domain=[np.min(df1.open), np.max(df1.open)])), 
-).properties(width=500, height=300)
-st.altair_chart(chart1 | chart2)
+df1 = df1.rename(columns={'date':'index'}).set_index('index')
+st.line_chart(df1['close')
+
 
 #chart_data = df1[['open','high','low','close','no_trades ']].copy()
 
