@@ -10,20 +10,57 @@ import seaborn as sns
 df = pd.read_csv('out.csv')
 df["date1"] = pd.to_datetime(df["date1"]) 
 df =df.sort_values(by='date1')
-#df.index =df['date1']
-#del df['date1']
+
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-fig, ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
-ax.set_xlabel('x axis')  
-ax.yaxis.set_label_text('y axis')
+fig, ax = plt.subplots()
+ax= sns.lineplot(data=df1, x="date1", y="open")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Opening price')  
+ax.yaxis.set_label_text('Date')
 st.pyplot(plt)
-fig, ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="volume_traded ");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="no_trades ");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="value_traded");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax1= sns.lineplot(data=df1, x="date1", y="close")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Closing price')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax2= sns.lineplot(data=df1, x="date1", y="high")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Higest price')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax3= sns.lineplot(data=df1, x="date1", y="low")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Lowest price')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax1= sns.lineplot(data=df1, x="date1", y="volume_traded ")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Traded Volume')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax2= sns.lineplot(data=df1, x="date1", y="no_trades ")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Number of Trades')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax3= sns.lineplot(data=df1, x="date1", y="value_traded")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Trading price')  
+ax.yaxis.set_label_text('Date')
+st.pyplot(plt)
 
 #ax1 = sns.lineplot(x='x', y='z', data=data)
 
