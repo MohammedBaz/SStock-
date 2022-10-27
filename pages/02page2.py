@@ -14,7 +14,7 @@ df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
 #fig = plt.figure() 
 #plt.plot(df1['close']) 
-plt.figure();chart_data.plot(subplots=True, figsize=(6, 6)); plt.legend(loc='best')
+plt.figure();chart_data.plot(subplots=True, figsize=(6, 6)); plt.legend(loc='best');plt.xticks(rotation=90)
 
 #plt.figure(); df1.plot(); plt.legend(loc='best')
 
