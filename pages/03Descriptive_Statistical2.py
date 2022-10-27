@@ -10,7 +10,7 @@ df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-df1 = df1.rename(columns={'date':'index'}).set_index('index')
+df1 = df1.rename(columns={'date1':'index'}).set_index('index')
 Title=np.array(['Max Opening Price','Max Opening Date','Max Closing Price','Max Closing Date',
        'Max Highest Price','Max Highest Date','Max Lowest Price','Max Lowest Date',
        'Max Volume_traded Price','Max Volume_traded Date','Max No_trades Price','Max No_trades Price Date',
