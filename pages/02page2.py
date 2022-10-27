@@ -9,7 +9,8 @@ df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
-st.line_chart(df1['close'])
+chart_data = df1[['open','high','low','close']].copy()
+st.line_chart(df1['chart_data'])
 
 
 #chart_data = df1[['open','high','low','close','no_trades ']].copy()
