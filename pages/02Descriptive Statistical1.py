@@ -15,11 +15,25 @@ df =df.sort_values(by='date1')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 
-fig, ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+fig = plt.figure()
+gs0 = matplotlib.gridspec.GridSpec(2,2, figure=fig)
 
-fig, ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
-fig, ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+ax1 = fig.add_subplot(gs0[0,0])
+ax2 = fig.add_subplot(gs0[0,1])
+ax3 = fig.add_subplot(gs0[1,0])
+ax3 = fig.add_subplot(gs0[1,1])
+
+sns.lineplot(ax=ax1, data=df1, x="date1", y="open")
+sns.lineplot(ax=ax2, sns.lineplot(data=df1, x="date1", y="close"))
+sns.lineplot(ax=ax3, sns.lineplot(data=df1, x="date1", y="high")
+sns.lineplot(ax=ax4, sns.lineplot(data=df1, x="date1", y="low")
+st.pyplot(plt)
+
+
+#fig, ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+#fig, ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+#fig, ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
+#fig, ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
 
 #ax1 = sns.lineplot(x='x', y='z', data=data)
 
