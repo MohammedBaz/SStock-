@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import numpy as np
 df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
