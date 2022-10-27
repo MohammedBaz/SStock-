@@ -19,7 +19,7 @@ ax = plt.gca()
 df1.plot(kind='line',x='date',y='open',ax=ax)
 df1.plot(kind='line',x='date',y='close', color='red', ax=ax)
 #plt.show()
-st.pyplot(fig)
+st.pyplot(ax)
 
 
 #chart_data = df1[['open','high','low','close','no_trades ']].copy()
