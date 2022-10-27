@@ -6,7 +6,7 @@ import altair as alt
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('out.csv')
+df = pd.read_csv('out.csv',parse_dates=date1)
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
