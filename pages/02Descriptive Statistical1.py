@@ -12,7 +12,9 @@ df["date1"] = pd.to_datetime(df["date1"])
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 fig, axes = plt.subplots(nrows=2, ncols=2)
-df1['date1','open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
+plt.plot(df.date1, df.open, linewidth=3,ax=axes[0,0])
+
+#df1['date1','open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
 #df1['open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
 df1['close'].plot(ax=axes[0,1]); axes[0,1].set_title('Closing Price')
 df1['high'].plot(ax=axes[1,0]); axes[1,0].set_title('high Price')
