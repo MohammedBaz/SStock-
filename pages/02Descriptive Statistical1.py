@@ -10,11 +10,11 @@ import seaborn as sns
 df = pd.read_csv('out.csv')
 df["date1"] = pd.to_datetime(df["date1"]) 
 df =df.sort_values(by='date1')
-df.index =df['date1']
-del df['date1']
+#df.index =df['date1']
+#del df['date1']
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-sns.lineplot(df['open'])
+sns.lineplot(data=df1, x="date1", y="open")
 st.pyplot(plt)
 
 #fig, axes = plt.subplots(nrows=2, ncols=2)
