@@ -19,7 +19,11 @@ st.pyplot(plt)
 
 dchart_data = pd.DataFrame(chart_data.describe(include='all'))
 st.dataframe(dchart_data)  # Same as st.write(df)
-st.write(chart_data['open'].autocorr(lag=1))
+st.write('One day Autocorrelation',chart_data['open'].autocorr(lag=1))
+st.write('One week Autocorrelation',chart_data['open'].autocorr(lag=7))
+st.write('One month Autocorrelation',chart_data['open'].autocorr(lag=30))
+st.write('One year Autocorrelation',chart_data['open'].autocorr(lag=365))
+
 
 
 
