@@ -18,7 +18,8 @@ plt.legend(loc='best');plt.xticks(rotation=90) # for more plot option see https:
 st.pyplot(plt)
 
 dchart_data = pd.DataFrame(chart_data.describe(include='all'))
-   
 st.dataframe(dchart_data)  # Same as st.write(df)
+st.write(chart_data['open'].autocorr(lag=1))
+
 
 
