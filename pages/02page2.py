@@ -12,22 +12,7 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
-#fig = plt.figure() 
-#plt.plot(df1['close']) 
-plt.figure();chart_data.plot(subplots=True, figsize=(6, 6)); plt.legend(loc='best');plt.xticks(rotation=90)
-
-#plt.figure(); df1.plot(); plt.legend(loc='best')
-
-st.pyplot(plt)
-             
-
-
-
-#chart_data = df1[['open','high','low','close','no_trades ']].copy()
-
-#c = alt.Chart(df1['close'])
-#st.altair_chart(c)
-
-
-
+plt.figure()
+chart_data.plot(subplots=True, figsize=(6, 6))
+plt.legend(loc='best');plt.xticks(rotation=90) # for more plot option see https://pandas.pydata.org/pandas-docs/version/0.13/visualization.html
 
