@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
+values = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
@@ -16,3 +18,5 @@ plt.figure()
 chart_data.plot(subplots=True, figsize=(6, 6))
 plt.legend(loc='best');plt.xticks(rotation=90) # for more plot option see https://pandas.pydata.org/pandas-docs/version/0.13/visualization.html
 st.pyplot(plt)
+
+
