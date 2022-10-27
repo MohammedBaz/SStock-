@@ -16,6 +16,7 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 ax=sns.lineplot(data=df1, x="date1", y="open")
 ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+plt.ylabel(“Number of Passengers”)
 st.pyplot(plt)
 
 #fig, axes = plt.subplots(nrows=2, ncols=2)
