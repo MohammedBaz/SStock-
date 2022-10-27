@@ -24,7 +24,7 @@ ax3 = fig.add_subplot(gs0[1,0])
 ax3 = fig.add_subplot(gs0[1,1])
 
 sns.lineplot(ax=ax1, data=df1, x="date1", y="open")
-sns.lineplot(ax=ax2, sns.lineplot(data=df1, x="date1", y="close"))
+sns.lineplot(ax=ax2, sns.lineplot(data=df1, x="date1", y="close")
 sns.lineplot(ax=ax3, sns.lineplot(data=df1, x="date1", y="high")
 sns.lineplot(ax=ax4, sns.lineplot(data=df1, x="date1", y="low")
 st.pyplot(plt)
