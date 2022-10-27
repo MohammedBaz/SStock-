@@ -5,21 +5,27 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date
+import seaborn as sns
 
 df = pd.read_csv('out.csv')
 df["date1"] = pd.to_datetime(df["date1"]) 
-
+df =df.sort_values(by='date1')
+df.index =df['date1']
+del df['date1']
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-fig, axes = plt.subplots(nrows=2, ncols=2)
-plt.plot(df.date1, df.open, linewidth=3,)
+sns.lineplot(df['open'])
+st.pyplot(plt)
 
+#fig, axes = plt.subplots(nrows=2, ncols=2)
+#plt.plot(df.date1, df.open, linewidth=3,)
+#sns.lineplot(df)
 #df1['date1','open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
 #df1['open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
 #df1['close'].plot(ax=axes[0,1]); axes[0,1].set_title('Closing Price')
 #df1['high'].plot(ax=axes[1,0]); axes[1,0].set_title('high Price')
 #df1['low'].plot(ax=axes[1,1]); axes[1,1].set_title('low Price')
-st.pyplot(plt)
+#st.pyplot(plt)
 #df1 = df1.rename(columns={'date1':'index'}).set_index('index')
 
 #plt.plot(df.x, df.y)
