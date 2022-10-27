@@ -16,7 +16,7 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 
 
-fig, axes = plt.subplots(1, 2)
+fig, ax = plt.subplots(1, 2)
 
 #create chart in each subplot
 sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
