@@ -13,7 +13,7 @@ df1=df.loc[df['name'] == option]
 #df1 = df1.rename(columns={'date':'index'}).set_index('index')
 #chart_data = df1[['open','high','low','close','volume_traded ']].copy()
 fig = plt.figure() 
-plt.plot(df1['close') 
+plt.plot(df1['close']) 
 st.pyplot(plt)
              
 
