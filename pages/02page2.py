@@ -11,10 +11,14 @@ df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
-chart_data = df1[['open','high','low','close','volume_traded ']].copy()
-fig = plt.figure() 
-plt.plot(chart_data) 
+#chart_data = df1[['open','high','low','close','volume_traded ']].copy()
+#fig = plt.figure() 
+#plt.plot(chart_data) 
 
+ax = plt.gca()
+df1.plot(kind='line',x='date',y='open',ax=ax)
+df1.plot(kind='line',x='date',y='close', color='red', ax=ax)
+#plt.show()
 st.pyplot(fig)
 
 
