@@ -14,7 +14,9 @@ df1 = df1.rename(columns={'date':'index'}).set_index('index')
 #chart_data = df1[['open','high','low','close','volume_traded ']].copy()
 #fig = plt.figure() 
 #plt.plot(df1['close']) 
-plt.figure(); df1.plot(); plt.legend(loc='best')
+plt.figure();df1.plot(subplots=True, figsize=(6, 6)); plt.legend(loc='best')
+
+#plt.figure(); df1.plot(); plt.legend(loc='best')
 
 st.pyplot(plt)
              
