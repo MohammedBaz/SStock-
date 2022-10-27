@@ -24,6 +24,6 @@ st.write('One week Autocorrelation',chart_data['open'].autocorr(lag=7))
 st.write('One month Autocorrelation',chart_data['open'].autocorr(lag=30))
 st.write('One year Autocorrelation',chart_data['open'].autocorr(lag=365))
 
-
+from statsmodels.tsa.stattools import adfuller
 
 
