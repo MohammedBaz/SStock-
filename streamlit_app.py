@@ -4,5 +4,5 @@ import pandas as pd
 
 st.markdown("# Main page 🎈")
 st.sidebar.markdown("# Main page 🎈")
-df = pd.read_csv('Tadawul_stcks_23_4.csv')
+df = pd.read_csv('out.csv')
 st.dataframe(df)
