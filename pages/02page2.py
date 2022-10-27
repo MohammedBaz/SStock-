@@ -4,5 +4,4 @@ import streamlit as st
 
 
 
-option = st.selectbox('Select the Compmay name',
-                      (df['name'].unique())
+option = st.selectbox('Select the Compmay name',df['name'].unique())
