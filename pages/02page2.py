@@ -8,7 +8,7 @@ df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-df1 = df1.rename(columns={'date':'index'}).set_index('index')
+#df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart1 = alt.Chart(df1).mark_line().encode(
     x=alt.X('date',axis=alt.Axis(format='%Y-%m',labelAngle=-20)),
     y=alt.Y('close',scale=alt.Scale(domain=[np.min(df1.colname1), np.max(df1.colname1)])), 
