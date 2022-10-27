@@ -8,4 +8,4 @@ df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart_data = df1[['open','high','low','close','no_trades ']].copy()
 import altair as alt
-alt.Chart(chart_data)
+st.altair_chart(chart_data, use_container_width=True)
