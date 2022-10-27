@@ -8,5 +8,5 @@ df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
 chart_data = df1[['open','high','low','close','no_trades ']].copy()
 import altair as alt
-c = alt.Chart(df1['close])
+c = alt.Chart(df1['close'])
 st.altair_chart(c)
