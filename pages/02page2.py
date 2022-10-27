@@ -7,5 +7,5 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
 
-chart_data = df1[['open','high','low','close','volume_traded','no_trades']].copy()
+chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
 st.line_chart(chart_data)
