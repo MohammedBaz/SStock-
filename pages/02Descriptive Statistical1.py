@@ -15,8 +15,59 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 
 
+fig, (ax1, ax2) = plt.subplots(2)
+fig.suptitle('Vertically stacked subplots')
+ax1.plot(x, y)
+ax2.plot(x, -y)
+
+
 
 fig, ax = plt.subplots()
-sns.lineplot(data=df1, x="date1", y="open")
-sns.lineplot(data=df1, x="date1", y="close")
-st.pyplot(fig)
+ax= sns.lineplot(data=df1, x="date1", y="open")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')  
+ax.yaxis.set_label_text('Opening price')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax1= sns.lineplot(data=df1, x="date1", y="close")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')  
+ax.yaxis.set_label_text('Closing price')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax2= sns.lineplot(data=df1, x="date1", y="high")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')  
+ax.yaxis.set_label_text('Highest price')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax3= sns.lineplot(data=df1, x="date1", y="low")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')    
+ax.yaxis.set_label_text('Lowest price')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax1= sns.lineplot(data=df1, x="date1", y="volume_traded ")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')   
+ax.yaxis.set_label_text('Traded Volume')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax2= sns.lineplot(data=df1, x="date1", y="no_trades ")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')   
+ax.yaxis.set_label_text('Number of Trades')
+st.pyplot(plt)
+
+fig, ax = plt.subplots()
+ax3= sns.lineplot(data=df1, x="date1", y="value_traded")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax.set_xlabel('Date')    
+ax.yaxis.set_label_text('Trading price')
+st.pyplot(plt)
+
