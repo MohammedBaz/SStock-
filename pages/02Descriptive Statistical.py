@@ -11,11 +11,6 @@ df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
-values = st.slider('Select a range of dates', int(df1.index[0]['date']), int(df1.index[0]['date']), (25.0, 75.0))
-
-st.write('Values:', values)
-
-
 chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
 plt.figure()
 chart_data.plot(subplots=True, figsize=(6, 6))
