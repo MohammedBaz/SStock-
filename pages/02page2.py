@@ -5,4 +5,4 @@ import pandas as pd
 df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-st.line_chart(df1['close'])
+st.line_chart(df1['date'],df1['close'])
