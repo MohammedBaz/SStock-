@@ -14,8 +14,8 @@ df1=df.loc[df['name'] == option]
 fig, axes = plt.subplots(nrows=2, ncols=2)
 df1['open'].plot(ax=axes[0,0]); axes[0,0].set_title('Opening Price')
 df1['close'].plot(ax=axes[0,1]); axes[0,1].set_title('Closing Price')
-df1['high'].plot(ax=axes[1,0]); axes[0,0].set_title('high Price')
-df1['low'].plot(ax=axes[1,1]); axes[0,1].set_title('low Price')
+df1['high'].plot(ax=axes[1,0]); axes[1,0].set_title('high Price')
+df1['low'].plot(ax=axes[1,1]); axes[1,1].set_title('low Price')
 st.pyplot(plt)
 #df1 = df1.rename(columns={'date1':'index'}).set_index('index')
 
