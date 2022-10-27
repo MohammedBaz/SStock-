@@ -16,12 +16,20 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 
 
-fig, ax = plt.subplots()
-ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
-ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
-ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
-ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+fig, axes = plt.subplots(1, 2)
+
+#create chart in each subplot
+sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
 st.pyplot(plt)
+
+
+#fig, ax = plt.subplots()
+#ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+#ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+#ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+#ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+#st.pyplot(plt)
 #ax1 = sns.lineplot(x='x', y='z', data=data)
 
 
