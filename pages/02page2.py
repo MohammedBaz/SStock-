@@ -5,7 +5,4 @@ import pandas as pd
 df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-dfd = df1.describe(include='all')
-dfd['Order ID'] = dfd['Order ID'].astype(str)
-st.write('Dataframe Description')
-st.write(dfd)
+st.line_chart(df1['close'])
