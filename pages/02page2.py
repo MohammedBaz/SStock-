@@ -6,4 +6,4 @@ df = pd.read_csv('out.csv')
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
-st.line_chart(df1['close'])
+st.line_chart(df1['close', 'open'])
