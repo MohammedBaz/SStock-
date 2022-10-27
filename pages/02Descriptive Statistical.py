@@ -9,10 +9,13 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('out.csv')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
-values = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
 df1=df.loc[df['name'] == option]
 df1 = df1.rename(columns={'date':'index'}).set_index('index')
+values = st.slider('Select a range of dates', df1.iloc[0]['date'], df1.iloc[len(df1)]['date'], (25.0, 75.0))
+
+st.write('Values:', values)
+
+
 chart_data = df1[['open','high','low','close','volume_traded ','no_trades ']].copy()
 plt.figure()
 chart_data.plot(subplots=True, figsize=(6, 6))
