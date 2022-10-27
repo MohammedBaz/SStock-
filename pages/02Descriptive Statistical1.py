@@ -14,10 +14,24 @@ df =df.sort_values(by='date1')
 #del df['date1']
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-ax=sns.lineplot(data=df1, x="date1", y="open")
-ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
-plt.ylabel("Number of Passengers")
+
+
+fig, ax = plt.subplots()
+ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax1= sns.lineplot(data=df1, x="date1", y="close");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax2= sns.lineplot(data=df1, x="date1", y="high");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax3= sns.lineplot(data=df1, x="date1", y="low");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
 st.pyplot(plt)
+#ax1 = sns.lineplot(x='x', y='z', data=data)
+
+
+
+#ax=sns.lineplot(data=df1, x="date1", y="open")
+#ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+#plt.ylabel("Opening Price")
+#st.pyplot(plt)
+
+
 
 #fig, axes = plt.subplots(nrows=2, ncols=2)
 #plt.plot(df.date1, df.open, linewidth=3,)
