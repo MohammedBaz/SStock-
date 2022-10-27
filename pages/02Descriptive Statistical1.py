@@ -57,4 +57,5 @@ ax7= sns.lineplot(data=df1, x="date1", y="value_traded")
 ax7.set_xticklabels(ax7.get_xticklabels(), rotation=40, ha="right")
 ax7.set_xlabel('Date')    
 ax7.yaxis.set_label_text('Trading price')
-st.pyplot(plt)
+
+st.pyplot(fig)
