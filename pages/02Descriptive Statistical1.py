@@ -20,7 +20,7 @@ ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");axes[0,0].s
 ax = plt.subplots();ax1= sns.lineplot(data=df1, x="date1", y="close");axes[0,1].set_title('Opening Price')
 ax = plt.subplots();ax2= sns.lineplot(data=df1, x="date1", y="high");axes[1,0].set_title('Opening Price')
 ax = plt.subplots();ax3= sns.lineplot(data=df1, x="date1", y="low");axes[1,1].set_title('Opening Price')
-
+st.pyplot(plt)
 
 
 #fig, ax = plt.subplots(); ax= sns.lineplot(data=df1, x="date1", y="open");ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right");st.pyplot(plt)
