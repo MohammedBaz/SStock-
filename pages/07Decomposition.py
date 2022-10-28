@@ -20,3 +20,4 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 decompose = seasonal_decompose(df1['open'],model='additive', period=7)
 plt=decompose.plot()
 st.write(plt)
+#https://builtin.com/data-science/time-series-python
