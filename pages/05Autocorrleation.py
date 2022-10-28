@@ -27,3 +27,4 @@ mask[np.triu_indices_from(mask)] = True
 
 svm = sns.heatmap(df1[X1].corr(), mask=mask, linewidths=0.1,vmax=1.0, 
             square=True, cmap=colormap, linecolor='white', annot=True)
+st.pyplot(svm)
