@@ -18,6 +18,7 @@ st.dataframe(df1[X1].corr())
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+fig, ax = plt.subplots()
 colormap = plt.cm.RdBu
 plt.figure(figsize=(15,10))
 plt.title(u'6 hours', y=1.05, size=16)
