@@ -13,4 +13,4 @@ option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
 
 X1=['open',	'high',	'low',	'close','volume_traded ','value_traded','no_trades ']
-df1[X1].corr()
+st.dataframe(df1[X1].corr())
