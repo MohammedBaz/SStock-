@@ -32,3 +32,23 @@ sns.heatmap(df1[X1].corr(), mask=mask, linewidths=0.1,vmax=1.0,
 
 #sns.heatmap(df1[X1].corr(), ax=ax)
 st.write(fig)
+
+st.write('Open price One day Autocorrelation',df1['open'].autocorr(lag=1))
+st.write('Open price One week Autocorrelation',df1['open'].autocorr(lag=7))
+st.write('Open price One month Autocorrelation',df1['open'].autocorr(lag=30))
+st.write('Open price One year Autocorrelation',df1['open'].autocorr(lag=365))
+
+st.write('Close price One day Autocorrelation',df1['close'].autocorr(lag=1))
+st.write('Close price One week Autocorrelation',df1['close'].autocorr(lag=7))
+st.write('Close price One month Autocorrelation',df1['close'].autocorr(lag=30))
+st.write('Close price One year Autocorrelation',df1['close'].autocorr(lag=365))
+
+st.write('highest price One day Autocorrelation',df1['high'].autocorr(lag=1))
+st.write('highest price One week Autocorrelation',df1['high'].autocorr(lag=7))
+st.write('highest price One month Autocorrelation',df1['high'].autocorr(lag=30))
+st.write('Open price One year Autocorrelation',df1['high'].autocorr(lag=365))
+
+st.write('Lowest price One day Autocorrelation',df1['low'].autocorr(lag=1))
+st.write('Lowest price One week Autocorrelation',df1['low'].autocorr(lag=7))
+st.write('Lowest price One month Autocorrelation',df1['low'].autocorr(lag=30))
+st.write('Lowest price One year Autocorrelation',df1['low'].autocorr(lag=365))
