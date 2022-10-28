@@ -18,5 +18,5 @@ X1=['open',	'high',	'low',	'close','volume_traded ','value_traded','no_trades ']
 from statsmodels.tsa.seasonal import seasonal_decompose
 
 decompose = seasonal_decompose(df1['open'],model='additive', period=7)
-decompose.plot()
+plt=decompose.plot()
 st.write(plt)
