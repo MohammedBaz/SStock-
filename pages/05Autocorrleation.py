@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 colormap = plt.cm.RdBu
 
-plt.title(u'6 hours', y=1.05, size=16)
+plt.title(Single Step AutoCorr, y=1.05, size=16)
 
 mask = np.zeros_like(df1[X1].corr())
 mask[np.triu_indices_from(mask)] = True
@@ -30,5 +30,5 @@ mask[np.triu_indices_from(mask)] = True
 sns.heatmap(df1[X1].corr(), mask=mask, linewidths=0.1,vmax=1.0, 
             square=True, cmap=colormap, linecolor='white', annot=True)
 
-sns.heatmap(df1[X1].corr().corr(), ax=ax)
+sns.heatmap(df1[X1].corr(), ax=ax)
 st.write(fig)
