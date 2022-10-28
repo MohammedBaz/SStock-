@@ -2,41 +2,34 @@
 # the (02) prefix of 02page2.py has been added to ensure the correct sort of pages only 
 import streamlit as st
 import pandas as pd
-import altair as alt
 import numpy as np
-import matplotlib.pyplot as plt
-
 df = pd.read_csv('out.csv')
+df["date1"] = pd.to_datetime(df["date1"]) 
+df =df.sort_values(by='date1')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-df1 = df1.rename(columns={'date1':'index'}).set_index('index')
-Title=np.array(['Max Opening Price','Max Opening Date','Max Closing Price','Max Closing Date',
-       'Max Highest Price','Max Highest Date','Max Lowest Price','Max Lowest Date',
-       'Max Volume_traded Price','Max Volume_traded Date','Max No_trades Price','Max No_trades Price Date',
-       'Max Value_traded Price','Max Value_traded Date'], dtype=object)
-Values=np.array([df1['open'][df1['open'].idxmax()],df1['date1'][df1['open'].idxmax()],
-                df1['close'][df1['close'].idxmax()],df1['date1'][df1['close'].idxmax()],
-                df1['high'][df1['high'].idxmax()],df1['date1'][df1['high'].idxmax()],
-                df1['low'][df1['low'].idxmax()],df1['date1'][df1['high'].idxmax()],
-                df1['volume_traded '][df1['volume_traded '].idxmax()],df1['date1'][df1['volume_traded '].idxmax()],
-                df1['no_trades '][df1['no_trades '].idxmax()],df1['date1'][df1['no_trades '].idxmax()],
-                df1['value_traded'][df1['value_traded'].idxmax()], df1['date1'][df1['value_traded'].idxmax()]
-                 ], dtype=object)
+
+XX=['open','date','high','low','close','volume_traded ',
+           'no_trades ','value_traded','dayOfWeek','AMonth','ADay','AYear']
+
+df2=df1.loc[df1['open'].idxmax()];f22 = df2[XX].copy().to_numpy()
+df3=df1.loc[df1['close'].idxmax()];f33 = df3[XX].copy().to_numpy()
+df4=df1.loc[df1['high'].idxmax()];f44 = df4[XX].copy().to_numpy()
+df5=df1.loc[df1['low'].idxmax()];f55 = df5[XX].copy().to_numpy()
+df6=df1.loc[df1['open'].idxmin()];f66 = df6[XX].copy().to_numpy()
+df7=df1.loc[df1['close'].idxmin()];f77 = df7[XX].copy().to_numpy()
+df8=df1.loc[df1['high'].idxmin()];f88 = df8[XX].copy().to_numpy()
+df9=df1.loc[df1['low'].idxmin()];f99 = df9[XX].copy().to_numpy()
+
 dataset = pd.DataFrame()
-dataset['Title'] = Title
-dataset['Values'] = Values
-st.write(dataset)
-
-
-
-
-#chart_data = df1[['open','high','low','close','volume_traded ','no_trades ','value_traded']].copy()
-#dchart_data = pd.DataFrame(chart_data.describe(include='all'))
-#st.dataframe(dchart_data)  # Same as st.write(df)
-#st.write('One day Autocorrelation',chart_data['open'].autocorr(lag=1))
-#st.write('One week Autocorrelation',chart_data['open'].autocorr(lag=7))
-#st.write('One month Autocorrelation',chart_data['open'].autocorr(lag=30))
-#st.write('One year Autocorrelation',chart_data['open'].autocorr(lag=365))
-
-
+dataset['Title'] = XX
+dataset['Opening Price Max'] = f22
+dataset['Opening Price Min'] = f66
+dataset['Close Price Max'] = f33
+dataset['Close Price Min'] = f77
+dataset['Highest Price Max'] = f44
+dataset['Highest Price Min'] = f88
+dataset['Lowest Price Max'] = f55
+dataset['Lowest Price Min'] = f99
+st.dataframe(dataset)
