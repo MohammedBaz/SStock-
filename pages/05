@@ -1,2 +1,0 @@
-X1=['open',	'high',	'low',	'close','volume_traded ','value_traded','no_trades ']
-df1[X1].corr()
