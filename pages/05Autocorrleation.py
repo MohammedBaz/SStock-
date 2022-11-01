@@ -17,7 +17,7 @@ age = st.slider('Select number of lags', 1, len(df1)-1, 1)
          
 X1=['open',	'high',	'low',	'close','volume_traded ','value_traded','no_trades ']
 st.dataframe(df1[X1].corr())
-)
+
 
 import seaborn as sns
 import matplotlib.pyplot as plt
