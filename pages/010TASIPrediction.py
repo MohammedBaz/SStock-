@@ -48,5 +48,5 @@ def plotCloseVolumeWithButton():
     xaxis2_type="date"
     );
   st.write(fig)
-plotCloseVolumeWithButton
+plotCloseVolumeWithButton()
   
