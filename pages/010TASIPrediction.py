@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
-df = pd.read_csv("/content/tasi_d.csv")
+df = pd.read_csv("tasi_d.csv")
 df['Date'] =pd.to_datetime(df['Date'])
 df=df.sort_values(by=['Date'])
 df.set_index('Date',inplace=True, drop=True)
