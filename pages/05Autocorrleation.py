@@ -11,10 +11,13 @@ df =df.sort_values(by='date1')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
+age = st.slider('Select number of lags', 1, len(df1)-1, 1)
+st.write("I'm ", age, 'years old'
+
 
 X1=['open',	'high',	'low',	'close','volume_traded ','value_traded','no_trades ']
 st.dataframe(df1[X1].corr())
-
+)
 
 import seaborn as sns
 import matplotlib.pyplot as plt
