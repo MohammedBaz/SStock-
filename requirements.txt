@@ -3,3 +3,4 @@ matplotlib
 statsmodels
 seaborn
 plotly
+keras
