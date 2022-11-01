@@ -3,7 +3,7 @@ import keras
 import numpy as np
 from tensorflow.keras.models import load_model
 model = load_model('modelx.h5')
-
+import datetime
 
 import numpy as np
 import pandas as pd
@@ -40,4 +40,9 @@ y=ReshapeArrayTimeStepY (df['Close'].tail(100),1)
 
 x_input = np.array([y[-NumberofTimesteps-1:-1]]).reshape((1, NumberofTimesteps, 1))
 prediction = model.predict(x_input) 
-st.write(prediction)
+
+today = datetime.date.today()
+TMR=today + datetime.timedelta(days=1)
+st.write("Based on the outcomes of our prediction model, the TASI index will be  on", TMR, prediction)
+
+#st.write(prediction)
