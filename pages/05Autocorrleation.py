@@ -11,7 +11,7 @@ df =df.sort_values(by='date1')
 
 option = st.selectbox('Select the Compmay name',df['name'].unique())
 df1=df.loc[df['name'] == option]
-age = st.slider('Select number of lags', 1, len(df1)-1, 1)
+lag = st.slider('Select number of lags', 1, len(df1)-1, 1)
 
          
          
@@ -27,7 +27,7 @@ colormap = plt.cm.RdBu
 
 plt.title('Single Step AutoCorr', y=1.05, size=16)
 
-mask = np.zeros_like(df1[X1].corr())
+mask = np.zeros_like(df1[X1].corr(lag))
 mask[np.triu_indices_from(mask)] = True
 
 sns.heatmap(df1[X1].corr(), mask=mask, linewidths=0.1,vmax=1.0, 
